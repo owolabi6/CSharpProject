@@ -9,8 +9,8 @@ namespace ChapterSix
         {
             Console.WriteLine("QUESTION 1");
 
-            Console.Write("Enter your number: ");
-            int number = Int.Parse(Console.ReadLine());
+            Console.Write("EnteR your number: ");
+            int number = int.Parse(Console.ReadLine());
 
             for (int i = 1; i < number; i++)
             {
@@ -32,7 +32,7 @@ namespace ChapterSix
             {
                 continue;
             }
-            Console.Write("{0} ", i);
+            Console.WriteLine("{0} ", i);
             }
 
             Console.WriteLine("QUESTION 3");
@@ -120,40 +120,40 @@ namespace ChapterSix
  
              int x1 = 0;
              int x2 = 1;
-             Console.Write("{0} {1} ", x1, x2);
+             Console.WriteLine("{0} {1} ", x1, x2);
  
             for (int i = 2; i < num; i++)
             {
                int x3 = x1 + x2;
-               Console.Write("{0} ", x3);
+               Console.WriteLine("{0} ", x3);
                x1 = x2;
                x2 = x3;
             }
 
             Console.WriteLine("QUESTION 6");
 
-            Console.Write("Enter N: (1<K<N)");
-            int n = int.Parse(Console.ReadLine());
-            Console.Write("Enter K: (1<K<N)");
+            Console.Write("Enter N: ");
+            int nValue2 = int.Parse(Console.ReadLine());
+            Console.Write("Enter K: ");
             int k = int.Parse(Console.ReadLine());
 
-            for (int i = n - 1; i > 0; i--)
+            for (int i = nValue2 - 1; i > 0; i--)
             {
-                n *= i;
+                nValue2 *= i;
             }
             for (int i = k -1; i > 0; i--)
             {
                 k *= i;
             }
 
-            n /= k;
-            Console.WriteLine("The result is {0}", n);
+            nValue2 /= k;
+            Console.WriteLine("The result is {0}", nValue2);
 
-            Console.Write("QUESTION 7");
+            Console.WriteLine("QUESTION 7");
 
-            Console.Write("Enter N: (1<K<N)");
+            Console.WriteLine("Enter n value: ");
             int n2 = int.Parse(Console.ReadLine());
-            Console.Write("Enter K: (1<K<N)");
+            Console.WriteLine("Enter k value: ");
             int k2 = int.Parse(Console.ReadLine());
             int nMinusK = n2 - k2;
             for (int i = n2 -1; i > 0; i--)
@@ -172,14 +172,31 @@ namespace ChapterSix
 
             Console.WriteLine("QUESTION 8");
 
+            Console.WriteLine("Enter the N: ");
+            int n3 = int.Parse(Console.ReadLine());
+            int nth = 2 * n3;
+            int nthPlus = n3 + 1;
+            for (int i = nth -1; i > 0; i--)
+            {
+                nth *= i;
+            }
+            for (int i = nthPlus -1; i > 0; i--)
+            {
+                nthPlus *= i;
+            }
+            for (int i = n3 -1; i > 0; i--)
+            {
+                n3 *= i;
+            }
+            Console.WriteLine("The result is {0}", nth /(nthPlus * n3));
 
-            Console.Write("QUESTION 9");
+            Console.WriteLine("QUESTION 9");
 
             int sum = 1;
             int temp = 1;
-            Console.Write("Enter n value: ");
+            Console.WriteLine("Enter n value: ");
             int nValue = int.Parse(Console.ReadLine());
-            Console.Write("Enter x value: ");
+            Console.WriteLine("Enter x value: ");
             int xValue = int.Parse(Console.ReadLine());
 
             for (int i = 1; i <= nValue; i++)
@@ -189,9 +206,9 @@ namespace ChapterSix
             }
             Console.WriteLine("The results is {0}", sum);
 
-            Console.Write("QUESTION 10");
+            Console.WriteLine("QUESTION 10");
 
-            Console.Write("Enter N: ");
+            Console.WriteLine("Enter n value: ");
             int valueN = int.Parse(Console.ReadLine());
 
             for (int i = 1; i < valueN; i++)
@@ -202,29 +219,29 @@ namespace ChapterSix
                 }
             }
 
-            Console.Write("QUESTION 11");
+            Console.WriteLine("QUESTION 11");
 
-            Console.Write("Enter N value: ");
-            decimal n3 = int.Parse(Console.ReadLine());
+            Console.WriteLine("Enter N value: ");
+            decimal n4 = int.Parse(Console.ReadLine());
             int zero = 0;
 
-            for (int i = (int) (n3 - 1); i > 0; i--)
+            for (int i = (int) (n4 - 1); i > 0; i--)
             {
-                n3 *= i;
+                n4 *= i;
             }
-            Console.WriteLine("N! is {0} and it ends ", n3);
+            Console.WriteLine("N! is {0} and it ends ", n4);
 
             do
             {
-                n3 /= 10;
+                n4 /= 10;
                 zero++;
             } while (n3 % 10 == 0);
 
             Console.WriteLine("with {0} zero.", zero);
 
-            Console.Write("QUESTION 12")
+            Console.WriteLine("QUESTION 12");
 
-             Console.Write("Enter Decimal number: ");
+             Console.WriteLine("Enter Decimal number: ");
              int decInput = int.Parse (Console.ReadLine());
              Console.WriteLine("Binary number: {0}", Convert.ToString(decInput,2));
 
@@ -253,7 +270,27 @@ namespace ChapterSix
 
             Console.WriteLine("QUESTION 16");
 
+            Random rand = new Random ();
             
+           Console.WriteLine("Enter number: ");
+           int randomN = int.Parse(Console.ReadLine());
+           int [] array = new int[randomN];
+           for (int i = 0; i < array.Length; i++)
+           {
+              array[i] = i;
+           }
+           foreach (var i in array)
+           {
+             int randomNum = rand.Next(0,randomN);
+             int randomOrder = array[i];
+             array[i] = array[randomNum];
+             array[randomNum] = randomOrder;
+           }
+           foreach (var i in array)
+           {
+             Console.WriteLine(array[i]);
+           }
+
 
             Console.WriteLine("QUESTION 17");
 
@@ -283,9 +320,70 @@ namespace ChapterSix
                 Console.WriteLine(a);
             }
 
-            Console.Write("QUESTION 18");
+            Console.WriteLine("QUESTION 18");
 
+            Console.Write("Enter digit: ");
+            int ndigit = Int32.Parse(Console.ReadLine());            
+            int[,] matrix = new int[ndigit, ndigit];
+            int row = 0, col = 0, direction = 0;
 
+            for (int i = 1; i <= ndigit * ndigit; i++)
+            {
+                switch(direction)
+                {
+                    case 0:
+                            if (col > ndigit - 1 || matrix[row, col] != 0)
+                            {
+                                direction = 1;
+                                col--;
+                                row++;
+                            }
+                            break;
+                    case 1:
+                            if (row > ndigit - 1 || matrix[row, col] != 0)
+                            {
+                                direction = 2;
+                                row--;
+                                col--;
+                            }
+                            break;
+                    case 2:
+                            if (col < 0 || matrix[row, col] != 0)
+                            {
+                                direction = 3;
+                                col++;
+                                row--;
+                            }
+                            break;
+                    case 3:
+                            if (row < 0 || matrix[row, col] != 0)
+                            {
+                                direction = 0;
+                                row++;
+                                col++;
+                            }
+                            break;
+                }
+
+                matrix[row, col] = i;                
+
+                switch(direction)
+                {
+                    case 0: col++; break;
+                    case 1: row++; break;
+                    case 2: col--; break;
+                    case 3: row--; break;
+                }
+            }
+            for (int i = 0; i < ndigit; i++)
+            {
+                for (int j = 0; j < ndigit; j++)
+                {
+                    if (matrix[i, j] < 10) Console.Write("{0}  ", matrix[i, j]);
+                    else Console.Write("{0} ", matrix[i, j]);
+                }
+                Console.WriteLine();
+            }
 
         }
     }
