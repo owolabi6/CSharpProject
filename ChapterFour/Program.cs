@@ -7,16 +7,14 @@ namespace ChapterFour
         static void Main(string[] args)
         {   
             Console.WriteLine("QUESTION 1");
-
-            Console.WriteLine("Hello World!");
-            Console.Write("Enter your number: ");
+Console.WriteLine("Enter your number: ");
             int num1 = Convert.ToInt32(Console.ReadLine());
-            Console.Write("Enter your number: ");
+            Console.WriteLine("Enter your number: ");
             int num2 = Convert.ToInt32(Console.ReadLine());
-            Console.Write("Enter your number: ");
+            Console.WriteLine("Enter your number: ");
             int num3 = Convert.ToInt32(Console.ReadLine());
             int sum = num1 + num2 + num3;
-            Console.WriteLine("The sum of the three numbers are: " sum);
+            Console.WriteLine("The sum of the three numbers are: ", sum);
 
             Console.WriteLine("QUESTION 2");
             
@@ -92,13 +90,14 @@ namespace ChapterFour
     
             Console.WriteLine("{0} numbers found.", analyser);
 
-            Consol.Write("QUESTION 6");
+            Console.WriteLine("QUESTION 6");
 
             Console.WriteLine("Enter first number: ");
-            int a = Convert.ToInt32(console.ReadLine());
+            int numA1 = Convert.ToInt32(Console.ReadLine());
             Console.WriteLine("Enter first number: ");
-            int a = Convert.ToInt32(console.ReadLine());
-            Console.WriteLine("{0} >= {1}", Math.Max(a,b), Math.Max(a,b));
+            int numB2 = Convert.ToInt32(Console.ReadLine());
+            Console.WriteLine("{0} is greater than {1}", Math.Max(numA1,numB2), Math.Min(numA1,numB2));
+
 
             Console.WriteLine("QUESTION 7");
 
@@ -139,6 +138,8 @@ namespace ChapterFour
                 parseSucceed = Int32.TryParse(Console.ReadLine(), out e);
                 Console.WriteLine(parseSucceed);
             } while (!parseSucceed);
+            double numberSum = a + b + c + d + e;
+            Console.WriteLine(numberSum);
 
             Console.WriteLine("QUESTION 8");
 
@@ -183,41 +184,7 @@ namespace ChapterFour
               return;
             }
             
-            Conssole.Write("QUESTION 9");
-
-            int a2,b2,c2;
-
-               double d, x1,x2;
-               Console.Write("Input the value of a : ");
-               a2 = Convert.ToInt32(Console.ReadLine());
-               Console.Write("Input the value of b : ");
-               b2 = Convert.ToInt32(Console.ReadLine());
-               Console.Write("Input the value of c : ");
-               c2 = Convert.ToInt32(Console.ReadLine());
-
-               d=b2*b2-4*a2*c2;
-               if(d==0)
-               {
-                  Console.Write("Both roots are equal.");
-                  x1=-b2/(2.0*a2);
-                  x2=x1;
-                  Console.WriteLine("First  Root Root1= {0}",x1);
-                  Console.WriteLine("Second Root Root2= {0}",x2);
-                }
-                else if(d>0)
-	            {
-	              Console.WriteLine("Both roots are real and diff-2");
-
-	              x1=(-b2+Math.Sqrt(d))/(2*a2);
-	              x2=(-b2-Math.Sqrt(d))/(2*a2);
-
-	              Console.WriteLine("First  Root Root1= {0}",x1);
-	              Console.WriteLine("Second Root root2= {0}",x2);
-	            }
-                else
-	               Console.WriteLine("Root are imeainary;No Solution. ");
-
-            Console.Write("QUESTION 10");
+            Console.WriteLine("QUESTION 9");
 
             int suM = 0;
 
@@ -231,9 +198,8 @@ namespace ChapterFour
             }
             Console.WriteLine("Sum of all numbers is {0}", suM);
 
-            Console.Write("QUESTION 11");
+            Console.Write("QUESTION 10");
 
-            
             Console.WriteLine("Enter number: ");
             int length2 = Int32.Parse(Console.ReadLine());
 
@@ -242,7 +208,7 @@ namespace ChapterFour
                  Console.WriteLine(i);
             }
 
-            Console.Write("QUESTION 12");
+            Console.Write("QUESTION 11");
 
             int next = 0;
             int prev = 0;
@@ -254,16 +220,17 @@ namespace ChapterFour
                 }
                 else
                 {
-                int sum = next + prev;
+                int summ = next + prev;
                 prev = next;
-                next = sum;
+                next = summ;
                 Console.WriteLine(next);
                 }
             }
+           
 
-            Console.Write("QUESTION 13");
+            Console.Write("QUESTION 12");
 
-             Console.WriteLine("Enter number: ");
+            Console.WriteLine("Enter number: ");
              int theLength = Int32.Parse(Console.ReadLine());
              double precision = 1.0;
 
@@ -273,13 +240,7 @@ namespace ChapterFour
              }
 
              Console.WriteLine("{0:F3}", precision);
-
-
-
-
-
-
-
+            
         }
     }
 }
