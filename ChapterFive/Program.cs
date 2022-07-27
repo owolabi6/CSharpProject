@@ -6,8 +6,7 @@ namespace ChapterFive
     {
         static void Main(string[] args)
         {
-            Console.WriteLine("Hello World!");
-            Console.Write("QUESTION 1");
+             Console.WriteLine("QUESTION 1");
 
             Console.WriteLine("Enter number: ");
             int numA = Int32.Parse(Console.ReadLine());
@@ -16,13 +15,13 @@ namespace ChapterFive
 
             if (numA > numB)
             {
-                numA = numA + numB;
-                numB = numA - numB;
-                numA = numA - numB;
+                int temp = numA;
+                numA = numB;
+                numB = temp;
             }
             Console.WriteLine("The first number is {0}, the second is {1},", numA, numB);
 
-            Console.Write("QUESTION 2");
+            Console.WriteLine("QUESTION 2");
 
             Console.WriteLine("Enter 3 numbers: ");
             int num1 = Int32.Parse(Console.ReadLine());
@@ -44,31 +43,31 @@ namespace ChapterFive
 
             Console.WriteLine("QUESTION 3");
 
-            int num1, num2, num3;
-            Console.Write("Input the 1st number :");
-            num1 = Convert.ToInt32(Console.ReadLine());
-            Console.Write("Input the  2nd number :");
-            num2 = Convert.ToInt32(Console.ReadLine());
-            Console.Write("Input the 3rd  number :");
-            num3 = Convert.ToInt32(Console.ReadLine());
+            int number1, number2, number3;
+            Console.WriteLine("Input the 1st number :");
+            number1 = Convert.ToInt32(Console.ReadLine());
+            Console.WriteLine("Input the  2nd number :");
+            number2 = Convert.ToInt32(Console.ReadLine());
+            Console.WriteLine("Input the 3rd  number :");
+            number3 = Convert.ToInt32(Console.ReadLine());
  
-            if (num1 > num2)
+            if (number1 > number2)
            {
-              if (num1 > num3)
+              if (number1 > number3)
              {
-                 Console.Write("The 1st Number is the greatest among three.");
+                 Console.WriteLine("The 1st Number is the greatest among three.");
              }
              else
              {
-                 Console.Write("The 3rd Number is the greatest among three.");
+                 Console.WriteLine("The 3rd Number is the greatest among three.");
              }
            }
-            else if (num2 > num3)
-               Console.Write("The 2nd Number is the greatest among three");
+            else if (number2 > number3)
+               Console.WriteLine("The 2nd Number is the greatest among three");
             else
-               Console.Write("The 3rd Number is the greatest among three");
+               Console.WriteLine("The 3rd Number is the greatest among three");
 
-            Console.Write("QUESTION 4");
+            Console.WriteLine("QUESTION 4");
             
             Console.WriteLine("Enter  number: ");
             int a = Int32.Parse(Console.ReadLine());
@@ -78,7 +77,7 @@ namespace ChapterFive
             int c = Int32.Parse(Console.ReadLine());
 
             if((a > b) && (a > c))
-         {
+            {
             if(b > c)
             {
                 Console.WriteLine("{0},{1},{2}", a,b,c);
@@ -87,9 +86,9 @@ namespace ChapterFive
             {
                 Console.WriteLine("{0} {1} {2}", a,c,b);
             }
-         }
-         else if ((b > a) && (b > c))
-         {
+            }
+            else if ((b > a) && (b > c))
+            {
             if(a > c)
             {
                 Console.WriteLine("{0} {1} {2}",b,a,c);
@@ -98,8 +97,8 @@ namespace ChapterFive
             {
                 Console.WriteLine("{0} {1} {2}", b,c,a);
             }
-         }
-        else if((c > a) && (c > b))
+            }
+            else if((c > a) && (c > b))
             {
                 if(a > b)
                 {
@@ -113,7 +112,7 @@ namespace ChapterFive
 
 
 
-            Console.Write("QUESTION 5");
+            Console.WriteLine("QUESTION 5");
 
             Console.WriteLine("Enter a number between 0 and 9:");
             string statement = Console.ReadLine();
@@ -143,31 +142,32 @@ namespace ChapterFive
                 default: Console.WriteLine("not a recognised digit"); 
                 break;
             }
-               Console.Write("QUESTION 6");
+               Console.WriteLine("QUESTION 6");
 
-                Console.Write("Input A (not 0): ");
-                sbyte a = Convert.ToSByte(Console.ReadLine());
-                Console.Write("Input B: ");
-                sbyte b = Convert.ToSByte(Console.ReadLine());
-                Console.Write("Input C: ");
-                sbyte c = Convert.ToSByte(Console.ReadLine());
+                 int d = 0;
+                Console.WriteLine("Input A (not 0): ");
+                int aValue = Convert.ToInt32(Console.ReadLine());
+                Console.WriteLine("Input B: ");
+                int bValue = Convert.ToInt32(Console.ReadLine());
+                Console.WriteLine("Input C: ");
+                int cValue = Convert.ToInt32(Console.ReadLine());
 
-                 d = (sbyte)(b * b - 4 * a * c);
+                 d = (int)(bValue * bValue - 4 * aValue * cValue);
                 if (d < 0)
                 Console.WriteLine("\nD={0}\nThere are no real roots.", d);
                 else if (d == 0)
             {
-                sbyte x1 = (sbyte)(-b / 2 * a);
+                int x1 = (int)(-bValue / 2 * aValue);
                 Console.WriteLine("\nX={0}", x1);
             }
             else
             {
-                sbyte x1 = (sbyte)((-b + Math.Sqrt(d)) / (2 * a));
-                sbyte x2 = (sbyte)((-b - Math.Sqrt(d)) / (2 * a));
+                int x1 = (int)((-bValue + Math.Sqrt(d)) / (2 * aValue));
+                int x2 = (int)((-bValue - Math.Sqrt(d)) / (2 * aValue));
                 Console.WriteLine("\nX1={0}\nX2={1}", x1, x2);
             }
 
-                Console.Write("QUESTION 7");
+                Console.WriteLine("QUESTION 7");
 
                 Console.WriteLine("Enter first number: ");
                 int firstNumber = Int32.Parse(Console.ReadLine());
@@ -191,9 +191,9 @@ namespace ChapterFive
 
                 Console.WriteLine("{0} is the biggest number, ", firstNumber);
 
-                Console.Write("QUESTION 8");
+                Console.WriteLine("QUESTION 8");
 
-                Console.Write("Please choose your input data type:\n 1 --> int\n 2 --> double\n 3 --> string\n ...and hit Enter");
+                Console.WriteLine("Please choose your input data type:\n 1 --> int\n 2 --> double\n 3 --> string\n ...and hit Enter: ");
                 int choice = int.Parse(Console.ReadLine());
 
                 switch (choice)
@@ -217,29 +217,29 @@ namespace ChapterFive
                         break;    
                 }
 
-            Console.Write("QUESTION 9");
+            Console.WriteLine("QUESTION 9");
 
-            Console.Write("input 1: ");
+            Console.WriteLine("input 1: ");
             int a1=Convert.ToInt32(Console.ReadLine());
-            Console.Write("input 2: ");
-            string a2 =Convert.ToInt32 (Console.ReadLine());
-            Console.Write("inpu 3: ");
-            string a3 = Convert.ToInt32(Console.ReadLine());
-            Console.Write("Input 4: ");
-            string a4 = Convert.ToInt32(Console.ReadLine());
-            Console.Write("Input 5: ");
-            string a5 = Convert.ToInt32(Console.ReadLine());
-            float sumAll = a1+a2+ a3+ a4 + a5;
+            Console.WriteLine("input 2: ");
+            int a2 =Convert.ToInt32 (Console.ReadLine());
+            Console.WriteLine("input 3: ");
+            int a3 = Convert.ToInt32(Console.ReadLine());
+            Console.WriteLine("Input 4: ");
+            int a4 = Convert.ToInt32(Console.ReadLine());
+            Console.WriteLine("Input 5: ");
+            int a5 = Convert.ToInt32(Console.ReadLine());
+            float sumAll = a1 + a2 + a3 + a4 + a5;
             if (sumAll ==0)
             {
-               Console.Write("they are subset" + sumAll);
+               Console.WriteLine("they are subset" + sumAll);
             }
             else
             { 
-               Console.Write("they are no subset");           
+               Console.WriteLine("they are no subset");           
             }    
 
-                Console.Write("QUESTION 10");
+                Console.WriteLine("QUESTION 10");
 
                 Console.WriteLine("Please write a number between 1 and 9: ");
             int input = int.Parse(Console.ReadLine());
@@ -269,7 +269,7 @@ namespace ChapterFive
 
             Console.WriteLine("QUESTION 11");
 
-            Console.Write("Insetr integer 0 <= n <= 999:  ");
+            Console.WriteLine("Input integer 0 <= n <= 999:  ");
             int? number = int.Parse(Console.ReadLine());
             Console.WriteLine();
 
@@ -456,9 +456,8 @@ namespace ChapterFive
 
                 default:
                     break;
-            }    
-            
-            
+            }   
+                
         }
     }
 }
