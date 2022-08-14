@@ -369,6 +369,184 @@ namespace ChapterSeven
             {
                Console.WriteLine("No sum found.");
             }
+		
+	    Console.WriteLine("\nQUESTION 12");
+            Console.WriteLine("\nQUESTION 13");
+
+            int row13 = 0, col13 = 0, sum13 = -1000;
+
+            Console.Write("Enter N: ");
+            int n13 = int.Parse(Console.ReadLine());
+            Console.Write("Enter M: ");
+            int m13 = int.Parse(Console.ReadLine());
+
+            int[,] arr13 = new int[n13, m13];
+
+            for(int i13 = 0; i13 < n13; i13++)
+                for (int j13 = 0; j13 < m13; j13++)
+                {
+                    Console.Write("arr [{0}][{1}] = ", i13, j13);
+                    arr13[i13, j13] = int.Parse(Console.ReadLine());
+                }            
+
+            for (int temprow13 = 0; temprow13 < arr13.Length - 2; temprow13++)
+                for (int tempcol13 = 0; tempcol13 < arr13.GetLength(0) - 2; tempcol13++)
+                {
+                    int tempsum13 = arr13[row13, col13] + arr13[row13, col13 + 1] + arr13[row13, col13 + 2] +
+                        arr13[row13 + 1, col13] + arr13[row13 + 1, col13 + 1] + arr13[row13 + 1, col13 + 2] +
+                        arr13[row13 + 2, col13] + arr13[row13 + 2, col13 + 1] + arr13[row13 + 2, col13 + 2];
+
+                    if (tempsum13 > sum13)
+                    {
+                        row13 = temprow13;
+                        col13 = tempcol13;
+                        sum13 = tempsum13;
+                    }
+                }
+
+            Console.WriteLine("Result");
+            Console.WriteLine("{0} {1} {2}", arr13[row13, col13], arr13[row13, col13 + 1], arr13[row13, col13 + 2]);
+            Console.WriteLine("{0} {1} {2}", arr13[row13 + 1, col13], arr13[row13 + 1, col13 + 1], arr13[row13 + 1, col13 + 2]);
+            Console.WriteLine("{0} {1} {2}", arr13[row13 + 2, col13], arr13[row13 + 2, col13 + 2], arr13[row13 + 2, col13 + 2]);
+            Console.WriteLine("The maximum sum is {0}.", sum13);
+
+            Console.WriteLine("\nQUESTION 14");
+
+            int tempSeq = 1, seq = 1;
+            string element = "e";
+
+            Console.Write("Enter N: ");
+            int n14 = int.Parse(Console.ReadLine());
+            Console.Write("Enter M: ");
+            int m14 = int.Parse(Console.ReadLine());
+
+            string[,] arr14 = new string[n14, m14];
+
+            for (int i14 = 0; i14 < n14; i14++)
+                for (int j14 = 0; j14 < m14; j14++)
+                {
+                    Console.Write("arr14 [{0}][{1}] = ", i14, j14);
+                    arr14[i14, j14] = Console.ReadLine();
+                }
+
+
+            for (int rows = 0; rows < arr14.GetLength(0); rows++)
+            {
+                for (int cols = 0; cols < arr14.GetLength(1) - 1; cols++)
+                {
+                    if (arr14[rows, cols] == arr14[rows, cols + 1]) tempSeq++;
+                    else tempSeq = 1;
+
+                    if (seq < tempSeq)
+                    {
+                        seq = tempSeq;
+                        element = arr14[rows, cols];
+                    }
+                }
+                tempSeq = 1;
+            }
+
+            for (int cols = 0; cols < arr14.GetLength(1); cols++)
+            {
+                for (int rows = 0; rows < arr14.GetLength(0) - 1; rows++)
+                {
+                    if (arr14[rows, cols] == arr14[rows + 1, cols]) tempSeq++;
+                    else tempSeq = 1;
+
+                    if (seq < tempSeq)
+                    {
+                        seq = tempSeq;
+                        element = arr14[rows, cols];
+                    }
+                }
+                tempSeq = 1;
+            }
+
+            for (int i14 = 0; i14 < arr14.GetLength(0) - 1; i14++)
+                for (int j14 = 0; j14 < arr14.GetLength(1) - 1; j14++)
+                {
+                    for (int rows = i14, cols = j14; rows < arr14.GetLength(0) - 1 && cols < arr14.GetLength(1) - 1; rows++, cols++)
+                    {
+                        if (arr14[rows, cols] == arr14[rows + 1, cols + 1]) tempSeq++;
+                        else tempSeq = 1;
+
+                        if (seq < tempSeq)
+                        {
+                            seq = tempSeq;
+                            element = arr14[rows, cols];
+                        }
+                    }
+                    tempSeq = 1;
+                }
+
+            for (int i14 = 0; i14 < arr14.GetLength(0) - 1; i14++)
+                for (int j14 = 1; j14 < arr14.GetLength(1); j14++)
+                {
+                    for (int rows = i14, cols = j14; rows < arr14.GetLength(0) - 1 && cols > 0; rows++, cols--)
+                    {
+                        if (arr14[rows, cols] == arr14[rows + 1, cols - 1]) tempSeq++;
+                        else tempSeq = 1;
+
+                        if (seq < tempSeq)
+                        {
+                            seq = tempSeq;
+                            element = arr14[rows, cols];
+                        }
+                    }
+                    tempSeq = 1;
+                }
+
+            for (int i14 = 0; i14 < seq; i14++)
+            {
+               Console.Write("{0}, ", element);
+            }
+
+            Console.WriteLine("\nQUESTION 15");
+
+            char[] alphabet = { 'a', 'b', 'c', 'd', 'e', 'f', 'g', 'h', 'i', 'j', 'k', 'l', 'm', 'n', 'o', 'p', 'q', 'r', 's', 't', 'u', 'v', 'w', 'x', 'y', 'z' };
+
+            Console.WriteLine("Enter a word: ");
+            char[] word = (Console.ReadLine()).ToCharArray();
+
+            for (int i15 = 0; i15 < word.Length; i15++)
+            {
+                for (int j15 = 0; j15 < alphabet.Length; j15++)
+                {
+                    if (word[i15] == alphabet[j15])
+                    {
+                       Console.Write("{0} ", j15);
+                    }
+                }
+            }
+
+            Console.WriteLine("\nQUESTION 16");
+
+            Console.WriteLine("Enter array length: ");
+            int length16 = int.Parse(Console.ReadLine());
+
+            int[] array16 = new int[length16];
+
+            for (int i16 = 0; i16 < length16; i16++)
+            {
+                Console.Write("Enter {0} element: ", i16);
+                array16[i16] = int.Parse(Console.ReadLine());
+            }
+
+            Console.WriteLine("Enter searched number: ");
+            int number16 = int.Parse(Console.ReadLine());
+
+            int index = Array.BinarySearch(array16, number16);
+
+            if (index >= 0)
+            {
+               Console.WriteLine("number is on {0} index.", index);
+            }
+            else
+            {
+               Console.WriteLine("number wasn't found.");
+            }
+
+            Console.WriteLine("\nQUESTION 17");	
         }
     }
 }
